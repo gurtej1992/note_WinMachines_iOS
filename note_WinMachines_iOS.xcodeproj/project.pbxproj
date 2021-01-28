@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B781CB0525C2E9BD00ACD4D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB0425C2E9BD00ACD4D0 /* AppDelegate.swift */; };
 		B781CB0725C2E9BD00ACD4D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB0625C2E9BD00ACD4D0 /* SceneDelegate.swift */; };
-		B781CB0925C2E9BD00ACD4D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB0825C2E9BD00ACD4D0 /* ViewController.swift */; };
 		B781CB0C25C2E9BD00ACD4D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B781CB0A25C2E9BD00ACD4D0 /* Main.storyboard */; };
 		B781CB0F25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B781CB0D25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld */; };
 		B781CB1125C2E9C600ACD4D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B781CB1025C2E9C600ACD4D0 /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 		B781CB0125C2E9BD00ACD4D0 /* note_WinMachines_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_WinMachines_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B781CB0425C2E9BD00ACD4D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B781CB0625C2E9BD00ACD4D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B781CB0825C2E9BD00ACD4D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B781CB0B25C2E9BD00ACD4D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B781CB0E25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = note_WinMachines_iOS.xcdatamodel; sourceTree = "<group>"; };
 		B781CB1025C2E9C600ACD4D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,9 +56,8 @@
 		B781CB0325C2E9BD00ACD4D0 /* note_WinMachines_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B781CB0425C2E9BD00ACD4D0 /* AppDelegate.swift */,
-				B781CB0625C2E9BD00ACD4D0 /* SceneDelegate.swift */,
-				B781CB0825C2E9BD00ACD4D0 /* ViewController.swift */,
+				B781CB1F25C2EACC00ACD4D0 /* Delegate */,
+				B781CB1D25C2EA0600ACD4D0 /* Controllers */,
 				B781CB0A25C2E9BD00ACD4D0 /* Main.storyboard */,
 				B781CB1025C2E9C600ACD4D0 /* Assets.xcassets */,
 				B781CB1225C2E9C600ACD4D0 /* LaunchScreen.storyboard */,
@@ -68,6 +65,22 @@
 				B781CB0D25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld */,
 			);
 			path = note_WinMachines_iOS;
+			sourceTree = "<group>";
+		};
+		B781CB1D25C2EA0600ACD4D0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B781CB1F25C2EACC00ACD4D0 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B781CB0425C2E9BD00ACD4D0 /* AppDelegate.swift */,
+				B781CB0625C2E9BD00ACD4D0 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +153,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B781CB0925C2E9BD00ACD4D0 /* ViewController.swift in Sources */,
 				B781CB0525C2E9BD00ACD4D0 /* AppDelegate.swift in Sources */,
 				B781CB0F25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld in Sources */,
 				B781CB0725C2E9BD00ACD4D0 /* SceneDelegate.swift in Sources */,
@@ -300,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tej.note-WinMachines-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,7 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tej.note-WinMachines-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
