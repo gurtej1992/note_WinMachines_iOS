@@ -13,6 +13,12 @@
 		B781CB0F25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B781CB0D25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld */; };
 		B781CB1125C2E9C600ACD4D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B781CB1025C2E9C600ACD4D0 /* Assets.xcassets */; };
 		B781CB1425C2E9C600ACD4D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B781CB1225C2E9C600ACD4D0 /* LaunchScreen.storyboard */; };
+		B781CB2D25C2EDF400ACD4D0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB2C25C2EDF400ACD4D0 /* HomeVC.swift */; };
+		B781CB3025C2EE3B00ACD4D0 /* NoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB2F25C2EE3B00ACD4D0 /* NoteVC.swift */; };
+		B781CB3725C31F4E00ACD4D0 /* Subjects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB3325C31F4E00ACD4D0 /* Subjects+CoreDataClass.swift */; };
+		B781CB3825C31F4E00ACD4D0 /* Subjects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB3425C31F4E00ACD4D0 /* Subjects+CoreDataProperties.swift */; };
+		B781CB3925C31F4E00ACD4D0 /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB3525C31F4E00ACD4D0 /* Notes+CoreDataClass.swift */; };
+		B781CB3A25C31F4E00ACD4D0 /* Notes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB3625C31F4E00ACD4D0 /* Notes+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		B781CB1025C2E9C600ACD4D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B781CB1325C2E9C600ACD4D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B781CB1525C2E9C600ACD4D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B781CB2C25C2EDF400ACD4D0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		B781CB2F25C2EE3B00ACD4D0 /* NoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVC.swift; sourceTree = "<group>"; };
+		B781CB3325C31F4E00ACD4D0 /* Subjects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B781CB3425C31F4E00ACD4D0 /* Subjects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B781CB3525C31F4E00ACD4D0 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B781CB3625C31F4E00ACD4D0 /* Notes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 		B781CB0325C2E9BD00ACD4D0 /* note_WinMachines_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B781CB3225C31F1F00ACD4D0 /* Model */,
 				B781CB1F25C2EACC00ACD4D0 /* Delegate */,
 				B781CB1D25C2EA0600ACD4D0 /* Controllers */,
 				B781CB0A25C2E9BD00ACD4D0 /* Main.storyboard */,
@@ -70,6 +83,8 @@
 		B781CB1D25C2EA0600ACD4D0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B781CB2C25C2EDF400ACD4D0 /* HomeVC.swift */,
+				B781CB2F25C2EE3B00ACD4D0 /* NoteVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -81,6 +96,17 @@
 				B781CB0625C2E9BD00ACD4D0 /* SceneDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		B781CB3225C31F1F00ACD4D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B781CB3325C31F4E00ACD4D0 /* Subjects+CoreDataClass.swift */,
+				B781CB3425C31F4E00ACD4D0 /* Subjects+CoreDataProperties.swift */,
+				B781CB3525C31F4E00ACD4D0 /* Notes+CoreDataClass.swift */,
+				B781CB3625C31F4E00ACD4D0 /* Notes+CoreDataProperties.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +179,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B781CB3725C31F4E00ACD4D0 /* Subjects+CoreDataClass.swift in Sources */,
+				B781CB3925C31F4E00ACD4D0 /* Notes+CoreDataClass.swift in Sources */,
+				B781CB3825C31F4E00ACD4D0 /* Subjects+CoreDataProperties.swift in Sources */,
+				B781CB3A25C31F4E00ACD4D0 /* Notes+CoreDataProperties.swift in Sources */,
 				B781CB0525C2E9BD00ACD4D0 /* AppDelegate.swift in Sources */,
+				B781CB2D25C2EDF400ACD4D0 /* HomeVC.swift in Sources */,
+				B781CB3025C2EE3B00ACD4D0 /* NoteVC.swift in Sources */,
 				B781CB0F25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld in Sources */,
 				B781CB0725C2E9BD00ACD4D0 /* SceneDelegate.swift in Sources */,
 			);
