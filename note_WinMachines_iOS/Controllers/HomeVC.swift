@@ -11,7 +11,6 @@ class HomeVC: UIViewController {
     @IBOutlet weak var allNotesTV: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // HELLOOO GUUYS
     }
     
     @IBAction func handleAdd(_ sender: UIBarButtonItem) {
