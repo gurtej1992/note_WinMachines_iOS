@@ -8,11 +8,9 @@
 import UIKit
 
 class HomeVC: UIViewController {
-    @IBOutlet weak var allNotesTV: UITableView!
+    @IBOutlet weak var allNotesCV: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // HELLOOO GUUYS
-        
     }
     
     @IBAction func handleAdd(_ sender: UIBarButtonItem) {
