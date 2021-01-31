@@ -7,17 +7,14 @@
         <attribute name="long" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="note_audio" optional="YES" attributeType="String"/>
         <attribute name="note_content" optional="YES" attributeType="String"/>
-        <attribute name="note_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="note_image" optional="YES" attributeType="String"/>
         <attribute name="note_title" optional="YES" attributeType="String"/>
-        <attribute name="subject_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Subjects" representedClassName="Subjects" syncable="YES" codeGenerationType="class">
         <attribute name="subject" optional="YES" attributeType="String"/>
-        <attribute name="subject_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Notes" positionX="-63" positionY="-18" width="128" height="193"/>
-        <element name="Subjects" positionX="-54" positionY="-9" width="128" height="73"/>
+        <element name="Notes" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Subjects" positionX="-54" positionY="-9" width="128" height="58"/>
     </elements>
 </model>

@@ -15,10 +15,6 @@
 		B781CB1425C2E9C600ACD4D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B781CB1225C2E9C600ACD4D0 /* LaunchScreen.storyboard */; };
 		B781CB2D25C2EDF400ACD4D0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB2C25C2EDF400ACD4D0 /* HomeVC.swift */; };
 		B781CB3025C2EE3B00ACD4D0 /* NoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB2F25C2EE3B00ACD4D0 /* NoteVC.swift */; };
-		B781CB3725C31F4E00ACD4D0 /* Subjects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB3325C31F4E00ACD4D0 /* Subjects+CoreDataClass.swift */; };
-		B781CB3825C31F4E00ACD4D0 /* Subjects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB3425C31F4E00ACD4D0 /* Subjects+CoreDataProperties.swift */; };
-		B781CB3925C31F4E00ACD4D0 /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB3525C31F4E00ACD4D0 /* Notes+CoreDataClass.swift */; };
-		B781CB3A25C31F4E00ACD4D0 /* Notes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB3625C31F4E00ACD4D0 /* Notes+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +28,6 @@
 		B781CB1525C2E9C600ACD4D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B781CB2C25C2EDF400ACD4D0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		B781CB2F25C2EE3B00ACD4D0 /* NoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVC.swift; sourceTree = "<group>"; };
-		B781CB3325C31F4E00ACD4D0 /* Subjects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B781CB3425C31F4E00ACD4D0 /* Subjects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B781CB3525C31F4E00ACD4D0 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B781CB3625C31F4E00ACD4D0 /* Notes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +67,6 @@
 				B781CB1025C2E9C600ACD4D0 /* Assets.xcassets */,
 				B781CB1225C2E9C600ACD4D0 /* LaunchScreen.storyboard */,
 				B781CB1525C2E9C600ACD4D0 /* Info.plist */,
-				B781CB0D25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld */,
 			);
 			path = note_WinMachines_iOS;
 			sourceTree = "<group>";
@@ -101,10 +92,7 @@
 		B781CB3225C31F1F00ACD4D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B781CB3325C31F4E00ACD4D0 /* Subjects+CoreDataClass.swift */,
-				B781CB3425C31F4E00ACD4D0 /* Subjects+CoreDataProperties.swift */,
-				B781CB3525C31F4E00ACD4D0 /* Notes+CoreDataClass.swift */,
-				B781CB3625C31F4E00ACD4D0 /* Notes+CoreDataProperties.swift */,
+				B781CB0D25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,10 +167,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B781CB3725C31F4E00ACD4D0 /* Subjects+CoreDataClass.swift in Sources */,
-				B781CB3925C31F4E00ACD4D0 /* Notes+CoreDataClass.swift in Sources */,
-				B781CB3825C31F4E00ACD4D0 /* Subjects+CoreDataProperties.swift in Sources */,
-				B781CB3A25C31F4E00ACD4D0 /* Notes+CoreDataProperties.swift in Sources */,
 				B781CB0525C2E9BD00ACD4D0 /* AppDelegate.swift in Sources */,
 				B781CB2D25C2EDF400ACD4D0 /* HomeVC.swift in Sources */,
 				B781CB3025C2EE3B00ACD4D0 /* NoteVC.swift in Sources */,
