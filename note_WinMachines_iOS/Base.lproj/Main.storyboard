@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TWZ-2S-1N5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TWZ-2S-1N5">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,38 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fo4-kM-1NN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t14-j6-zq7">
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DdW-Jf-xxl">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IbE-UD-TyK">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Ye-tA-ZcC">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZgY-TU-Pc7"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2Au-l2-wKr"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="d1j-Ty-LSV"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kew-xt-51l"/>
                                 </connections>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fo4-kM-1NN" secondAttribute="bottom" id="S8r-oM-RA4"/>
-                            <constraint firstItem="fo4-kM-1NN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VVn-vO-p4H"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fo4-kM-1NN" secondAttribute="trailing" id="WSV-sh-yML"/>
-                            <constraint firstItem="fo4-kM-1NN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XeF-0p-Z8A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="t14-j6-zq7" secondAttribute="bottom" id="2l3-AM-pS2"/>
+                            <constraint firstItem="t14-j6-zq7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TiK-EL-uj8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t14-j6-zq7" secondAttribute="trailing" id="hFt-PG-uQp"/>
+                            <constraint firstItem="t14-j6-zq7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vu6-Cv-cDL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mCD-6h-zFB">
@@ -59,7 +42,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="allNotesCV" destination="fo4-kM-1NN" id="34f-Jp-mYj"/>
+                        <outlet property="allNotesTV" destination="t14-j6-zq7" id="0H1-TM-su7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

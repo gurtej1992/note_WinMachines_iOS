@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A75244E25C78BB400F7BBF1 /* MoreinfoVCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75244D25C78BB400F7BBF1 /* MoreinfoVCTableView.swift */; };
+		B771E0C125C9B69900CF2DCB /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771E0C025C9B69900CF2DCB /* HomeTableViewCell.swift */; };
 		B781CB0525C2E9BD00ACD4D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB0425C2E9BD00ACD4D0 /* AppDelegate.swift */; };
 		B781CB0725C2E9BD00ACD4D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB0625C2E9BD00ACD4D0 /* SceneDelegate.swift */; };
 		B781CB0C25C2E9BD00ACD4D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B781CB0A25C2E9BD00ACD4D0 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		4A75244D25C78BB400F7BBF1 /* MoreinfoVCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreinfoVCTableView.swift; sourceTree = "<group>"; };
+		B771E0C025C9B69900CF2DCB /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		B781CB0125C2E9BD00ACD4D0 /* note_WinMachines_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_WinMachines_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B781CB0425C2E9BD00ACD4D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B781CB0625C2E9BD00ACD4D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				C3EB4A4625C9B11E00FB6CBE /* HomeCollectionViewCell.swift */,
 				C3EB4A4725C9B11E00FB6CBE /* HomeCollectionViewCell.xib */,
+				B771E0C025C9B69900CF2DCB /* HomeTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				B781CB2D25C2EDF400ACD4D0 /* HomeVC.swift in Sources */,
 				B781CB3025C2EE3B00ACD4D0 /* NoteVC.swift in Sources */,
 				B781CB0F25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld in Sources */,
+				B771E0C125C9B69900CF2DCB /* HomeTableViewCell.swift in Sources */,
 				B781CB0725C2E9BD00ACD4D0 /* SceneDelegate.swift in Sources */,
 				C3EB4A4C25C9B2A100FB6CBE /* Constants.swift in Sources */,
 			);

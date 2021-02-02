@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,26 +10,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeCollectionViewCell" customModule="note_WinMachines_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="258" height="278"/>
+            <rect key="frame" x="0.0" y="0.0" width="258" height="247"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="258" height="278"/>
+                <rect key="frame" x="0.0" y="0.0" width="258" height="247"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCQ-Oy-gzI">
-                        <rect key="frame" x="0.0" y="0.0" width="258" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCQ-Oy-gzI">
+                        <rect key="frame" x="0.0" y="0.0" width="258" height="41"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2aK-Lv-cBz">
-                        <rect key="frame" x="0.0" y="21" width="258" height="145"/>
+                        <rect key="frame" x="0.0" y="41" width="258" height="145"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="2aK-Lv-cBz" secondAttribute="height" multiplier="16:9" id="Btq-cR-bNR"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muz-d7-kiR">
-                        <rect key="frame" x="0.0" y="166" width="258" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muz-d7-kiR">
+                        <rect key="frame" x="0.0" y="186" width="258" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -49,13 +49,13 @@
                 <constraint firstItem="eCQ-Oy-gzI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lqO-65-uIV"/>
                 <constraint firstAttribute="trailing" secondItem="eCQ-Oy-gzI" secondAttribute="trailing" id="oAp-Hl-FLh"/>
             </constraints>
-            <size key="customSize" width="258" height="278"/>
+            <size key="customSize" width="258" height="247"/>
             <connections>
                 <outlet property="lblContent" destination="Muz-d7-kiR" id="faG-Vv-Rnk"/>
                 <outlet property="lblTitle" destination="eCQ-Oy-gzI" id="NE9-vl-moa"/>
                 <outlet property="noteImg" destination="2aK-Lv-cBz" id="vz5-XV-H91"/>
             </connections>
-            <point key="canvasLocation" x="191.30434782608697" y="124.55357142857142"/>
+            <point key="canvasLocation" x="191.30434782608697" y="114.17410714285714"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -9,4 +9,5 @@ import UIKit
 
 class Constants: NSObject {
     static let HomeCollectionViewCell = "HomeCollectionViewCell"
+    static let HomeTableViewCell = "HomeTableViewCell"
 }
