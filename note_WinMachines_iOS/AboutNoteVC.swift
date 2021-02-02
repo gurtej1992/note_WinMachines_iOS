@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MoreinfoVCTableView: UITableViewController {
+class AboutNoteVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

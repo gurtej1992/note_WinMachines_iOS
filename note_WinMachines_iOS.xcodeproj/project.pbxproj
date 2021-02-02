@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A75244E25C78BB400F7BBF1 /* MoreinfoVCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75244D25C78BB400F7BBF1 /* MoreinfoVCTableView.swift */; };
+		4A75244E25C78BB400F7BBF1 /* AboutNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75244D25C78BB400F7BBF1 /* AboutNoteVC.swift */; };
 		B771E0C125C9B69900CF2DCB /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771E0C025C9B69900CF2DCB /* HomeTableViewCell.swift */; };
 		B781CB0525C2E9BD00ACD4D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB0425C2E9BD00ACD4D0 /* AppDelegate.swift */; };
 		B781CB0725C2E9BD00ACD4D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781CB0625C2E9BD00ACD4D0 /* SceneDelegate.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A75244D25C78BB400F7BBF1 /* MoreinfoVCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreinfoVCTableView.swift; sourceTree = "<group>"; };
+		4A75244D25C78BB400F7BBF1 /* AboutNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNoteVC.swift; sourceTree = "<group>"; };
 		B771E0C025C9B69900CF2DCB /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		B781CB0125C2E9BD00ACD4D0 /* note_WinMachines_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_WinMachines_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B781CB0425C2E9BD00ACD4D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 				B781CB1025C2E9C600ACD4D0 /* Assets.xcassets */,
 				B781CB1225C2E9C600ACD4D0 /* LaunchScreen.storyboard */,
 				B781CB1525C2E9C600ACD4D0 /* Info.plist */,
-				4A75244D25C78BB400F7BBF1 /* MoreinfoVCTableView.swift */,
+				4A75244D25C78BB400F7BBF1 /* AboutNoteVC.swift */,
 				C3EB4A4B25C9B2A100FB6CBE /* Constants.swift */,
 			);
 			path = note_WinMachines_iOS;
@@ -193,7 +193,7 @@
 			files = (
 				C3EB4A4825C9B11E00FB6CBE /* HomeCollectionViewCell.swift in Sources */,
 				B781CB0525C2E9BD00ACD4D0 /* AppDelegate.swift in Sources */,
-				4A75244E25C78BB400F7BBF1 /* MoreinfoVCTableView.swift in Sources */,
+				4A75244E25C78BB400F7BBF1 /* AboutNoteVC.swift in Sources */,
 				B781CB2D25C2EDF400ACD4D0 /* HomeVC.swift in Sources */,
 				B781CB3025C2EE3B00ACD4D0 /* NoteVC.swift in Sources */,
 				B781CB0F25C2E9BD00ACD4D0 /* note_WinMachines_iOS.xcdatamodeld in Sources */,
