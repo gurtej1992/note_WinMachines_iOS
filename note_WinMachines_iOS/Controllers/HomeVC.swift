@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeVC: UIViewController {
+    var arrNotes = [Notes]()
     @IBOutlet weak var allNotesCV: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +19,15 @@ class HomeVC: UIViewController {
 }
 extension HomeVC : UICollectionViewDelegate , UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        arrNotes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        return cell
     }
     
     
 }
+
 
