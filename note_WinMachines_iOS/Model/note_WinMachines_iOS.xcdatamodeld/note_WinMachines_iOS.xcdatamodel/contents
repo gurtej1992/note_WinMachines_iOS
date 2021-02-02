@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Notes" representedClassName="Notes" syncable="YES" codeGenerationType="class">
         <attribute name="date_created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="date_modified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -9,12 +9,14 @@
         <attribute name="note_content" optional="YES" attributeType="String"/>
         <attribute name="note_image" optional="YES" attributeType="String"/>
         <attribute name="note_title" optional="YES" attributeType="String"/>
+        <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subjects" inverseName="note" inverseEntity="Subjects"/>
     </entity>
     <entity name="Subjects" representedClassName="Subjects" syncable="YES" codeGenerationType="class">
-        <attribute name="subject" optional="YES" attributeType="String"/>
+        <attribute name="subjectName" optional="YES" attributeType="String"/>
+        <relationship name="note" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notes" inverseName="subject" inverseEntity="Notes"/>
     </entity>
     <elements>
-        <element name="Notes" positionX="-63" positionY="-18" width="128" height="163"/>
-        <element name="Subjects" positionX="-54" positionY="-9" width="128" height="58"/>
+        <element name="Notes" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="Subjects" positionX="-54" positionY="-9" width="128" height="73"/>
     </elements>
 </model>
