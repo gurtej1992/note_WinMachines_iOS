@@ -13,10 +13,16 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let notes = AccessCoreData.fetchNotes(){
+            arrNotes = notes
+            allNotesTV.reloadData()
+        }
     }
     
     @IBAction func handleAdd(_ sender: UIBarButtonItem) {
+        if let vc = storyboard?.instantiateViewController(identifier: Constants.NoteVC){
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 extension HomeVC : UITableViewDelegate , UITableViewDataSource{
@@ -25,7 +31,7 @@ extension HomeVC : UITableViewDelegate , UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.HomeCollectionViewCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.HomeTableViewCell, for: indexPath)
         cell.textLabel?.text = arrNotes[indexPath.row].note_title
         return cell
     }
