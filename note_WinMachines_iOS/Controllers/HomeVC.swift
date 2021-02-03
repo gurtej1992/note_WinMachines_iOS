@@ -13,12 +13,18 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getNotes()
+    }
+    func getNotes(){
         if let notes = AccessCoreData.fetchNotes(){
+            arrNotes.removeAll()
             arrNotes = notes
             allNotesTV.reloadData()
         }
     }
-    
     @IBAction func handleAdd(_ sender: UIBarButtonItem) {
         if let vc = storyboard?.instantiateViewController(identifier: Constants.NoteVC){
             self.navigationController?.pushViewController(vc, animated: true)
@@ -33,10 +39,16 @@ extension HomeVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.HomeTableViewCell, for: indexPath)
         cell.textLabel?.text = arrNotes[indexPath.row].note_title
+        cell.detailTextLabel?.text = arrNotes[indexPath.row].note_content
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            AccessCoreData.deleteNote(note: arrNotes[indexPath.row])
+            getNotes()
+        }
+    }
 //extension HomeVC : UICollectionViewDelegate , UICollectionViewDataSource{
 //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        arrNotes.count
@@ -49,5 +61,4 @@ extension HomeVC : UITableViewDelegate , UITableViewDataSource{
     
     
 }
-
 
