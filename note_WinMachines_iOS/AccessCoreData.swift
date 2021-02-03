@@ -30,6 +30,11 @@ class AccessCoreData: NSObject {
         }
         return subjects
     }
+    static func deleteNote(note : Notes){
+        AccessCoreData.context.delete(note)
+        saveCoreData()
+        
+    }
     static func saveCoreData(){
         do {
             try AccessCoreData.context.save()

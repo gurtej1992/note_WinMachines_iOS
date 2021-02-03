@@ -36,6 +36,14 @@ class NoteVC: UIViewController {
     }
     @IBAction func HandleInsertImage(_ sender: UIButton) {
     }
+    @IBAction func handleSave(_ sender: UIButton) {
+        let note = Notes(context: AccessCoreData.context)
+        note.note_title = txtTitle.text
+        note.note_content = txtContent.text
+        note.date_created = Date()
+        AccessCoreData.saveCoreData()
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func handleBack(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
