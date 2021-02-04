@@ -8,7 +8,20 @@
 import UIKit
 
 class Functions: NSObject {
-
+static func createDate(from date : Date, with format : String, calender : Bool = false) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = format
+    if calender{
+        let calendar = Calendar.current
+        if calendar.isDateInYesterday(date) { return "Yesterday" }
+        else if calendar.isDateInToday(date) { return "Today" }
+        else if calendar.isDateInTomorrow(date) { return "Tomorrow" }
+        else{
+            dateFormatter.string(from: date)
+        }
+    }
+    return dateFormatter.string(from: date)
+}
 }
 extension UIView{
     func addShadow(){

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AccessCoreData: NSObject {
     static let context =
@@ -21,6 +22,17 @@ class AccessCoreData: NSObject {
         }
         return notes
     }
+    static func fetchNotesWithPredicate(predicate: NSPredicate) -> [Notes]?{
+         var notes : [Notes]?
+        let fetch : NSFetchRequest<Notes> = Notes.fetchRequest()
+        fetch.predicate = predicate
+         do {
+          notes = try AccessCoreData.context.fetch(fetch)
+         } catch  {
+             
+         }
+         return notes
+     }
     static func fetchSubjects() -> [Subjects]?{
         var subjects : [Subjects]?
         do {

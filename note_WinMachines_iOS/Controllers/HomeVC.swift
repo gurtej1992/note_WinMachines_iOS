@@ -9,6 +9,9 @@ import UIKit
 
 class HomeVC: UIViewController {
     var arrNotes = [Notes]()
+    var arrFilterNotes = [Notes]()
+    var isSubjectSelected = false
+    
     @IBOutlet weak var allNotesTV: UITableView!
     
     override func viewDidLoad() {
@@ -16,13 +19,19 @@ class HomeVC: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        getNotes()
+ //       if !isSubjectSelected {getNotes()}
     }
     func getNotes(){
         if let notes = AccessCoreData.fetchNotes(){
             arrNotes.removeAll()
             arrNotes = notes
             allNotesTV.reloadData()
+        }
+    }
+    @IBAction func handleManageSubjects(_ sender: Any) {
+        if let vc = storyboard?.instantiateViewController(identifier: Constants.ManageSubjectVC) as? ManageSubjectVC{
+            vc.delegate = self
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     @IBAction func handleAdd(_ sender: UIBarButtonItem) {
@@ -33,32 +42,36 @@ class HomeVC: UIViewController {
 }
 extension HomeVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrNotes.count
+        let notes = isSubjectSelected ? arrFilterNotes : arrNotes
+        return notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.HomeTableViewCell, for: indexPath)
-        cell.textLabel?.text = arrNotes[indexPath.row].note_title
-        cell.detailTextLabel?.text = arrNotes[indexPath.row].note_content
+        let notes = isSubjectSelected ? arrFilterNotes[indexPath.row] : arrNotes[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.NoteTableViewCell, for: indexPath) as! NoteTableViewCell
+        cell.configureCell(with: notes)
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            AccessCoreData.deleteNote(note: arrNotes[indexPath.row])
+            let notes = isSubjectSelected ? arrFilterNotes[indexPath.row] : arrNotes[indexPath.row]
+            AccessCoreData.deleteNote(note: notes)
             getNotes()
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(identifier: Constants.NoteVC) as? NoteVC{ 
-            vc.selectedNote = arrNotes[indexPath.row]
+        if let vc = storyboard?.instantiateViewController(identifier: Constants.NoteVC) as? NoteVC{
+            let notes = isSubjectSelected ? arrFilterNotes[indexPath.row] : arrNotes[indexPath.row]
+            vc.selectedNote = notes
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal, title: "Info") { (act, view, bol) in
             if let vc = self.storyboard?.instantiateViewController(identifier: Constants.AboutNoteVC) as? AboutNoteVC{
-                vc.selectedNote = self.arrNotes[indexPath.row]
+                let notes = self.isSubjectSelected ? self.arrFilterNotes[indexPath.row] : self.arrNotes[indexPath.row]
+                vc.selectedNote = notes
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
@@ -79,3 +92,10 @@ extension HomeVC : UITableViewDelegate , UITableViewDataSource{
     
 }
 
+extension HomeVC : SubjectSelectionDelegate{
+    func subjectSelected(is subject: Subjects) {
+        isSubjectSelected = true
+        arrFilterNotes = AccessCoreData.fetchNotesWithPredicate(predicate: NSPredicate(format: "subject.subjectName = %@", subject.subjectName!))!
+        allNotesTV.reloadData()
+    }
+}
