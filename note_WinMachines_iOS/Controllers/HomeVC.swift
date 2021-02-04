@@ -19,7 +19,7 @@ class HomeVC: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
- //       if !isSubjectSelected {getNotes()}
+        if !isSubjectSelected {getNotes()}
     }
     func getNotes(){
         if let notes = AccessCoreData.fetchNotes(){
@@ -78,6 +78,9 @@ extension HomeVC : UITableViewDelegate , UITableViewDataSource{
         
         let swipe  =  UISwipeActionsConfiguration(actions: [action])
         return swipe
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.estimatedRowHeight
     }
 //extension HomeVC : UICollectionViewDelegate , UICollectionViewDataSource{
 //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

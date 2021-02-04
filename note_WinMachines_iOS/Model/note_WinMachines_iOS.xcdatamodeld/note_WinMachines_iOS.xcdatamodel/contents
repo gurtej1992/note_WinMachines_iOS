@@ -7,7 +7,7 @@
         <attribute name="long" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="note_audio" optional="YES" attributeType="String"/>
         <attribute name="note_content" optional="YES" attributeType="String"/>
-        <attribute name="note_image" optional="YES" attributeType="String"/>
+        <attribute name="note_image" optional="YES" attributeType="Binary"/>
         <attribute name="note_title" optional="YES" attributeType="String"/>
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subjects" inverseName="note" inverseEntity="Subjects"/>
     </entity>

@@ -10,7 +10,8 @@ import UIKit
 class NoteTableViewCell: UITableViewCell {
         @IBOutlet weak var shadowView : UIView!
         @IBOutlet weak var lblTitle : UILabel!
-         @IBOutlet weak var lblDate : UILabel!
+    @IBOutlet weak var lblSubject: UILabel!
+    @IBOutlet weak var lblDate : UILabel!
          @IBOutlet weak var lblDesc : UILabel!
         @IBOutlet weak var noteImageView: UIImageView!
         override func awakeFromNib() {
@@ -30,12 +31,11 @@ class NoteTableViewCell: UITableViewCell {
         func configureCell(with note: Notes){
             lblTitle.text = note.note_title
             lblDesc.text = note.note_content
+            lblSubject.text = "Subject: \(note.subject?.subjectName ?? "None")"
             if let date = note.date_created{
                 lblDate.text = Functions.createDate(from: date, with: "MMM d, yyyy", calender: true)
             }
-            if let strImage = note.note_image{
-                guard let imageurl = URL(string: strImage) else {return}
-                guard let data = try? Data(contentsOf: imageurl) else {return}
+            if let data = note.note_image{
                 noteImageView.isHidden = false
                 noteImageView.image = UIImage(data: data)
             }

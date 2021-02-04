@@ -27,7 +27,7 @@ class NoteVC: UIViewController {
     var imagePicker = UIImagePickerController()
     var selectedNote: Notes?
     var selectedSubject: Subjects?
-    var selectedImage : String?
+    var selectedImage : Data?
     var locationManager = CLLocationManager()
     var userLocation : CLLocationCoordinate2D?
     override func viewDidLoad() {
@@ -42,10 +42,8 @@ class NoteVC: UIViewController {
                 playerView.isHidden = false
                 recordImg.image = UIImage(named: "play_btn")
             }
-            if let strImage =  note.note_image{
-                selectedImage = strImage
-                guard let imageurl = URL(string: strImage) else {return}
-                guard let data = try? Data(contentsOf: imageurl) else {return}
+            if let data =  note.note_image{
+                selectedImage = data
                 noteImg.image = UIImage(data: data)
                 imageView.isHidden = false
             }
@@ -224,18 +222,7 @@ extension NoteVC : UIImagePickerControllerDelegate, UINavigationControllerDelega
         } else {
             print("Other source")
         }
-        let fileManager = FileManager.default
-         let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
-        let name =  UUID().uuidString
-         let imagePath = documentsPath?.appendingPathComponent("\(name).jpg")
-        selectedImage = imagePath?.absoluteString
-         
-         // extract image from the picker and save it
-         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-             
-             let imageData = pickedImage.jpegData(compressionQuality: 0.75)
-             try! imageData?.write(to: imagePath!)
-         }
+        selectedImage = noteImg.image!.jpegData(compressionQuality: 0.75)
         
         picker.dismiss(animated: true, completion: nil)
     }
