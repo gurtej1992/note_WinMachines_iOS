@@ -11,4 +11,5 @@ class Constants: NSObject {
     static let HomeCollectionViewCell = "HomeCollectionViewCell"
     static let HomeTableViewCell = "cell"
     static let NoteVC = "NoteVC"
+    static let AboutNoteVC = "AboutNoteVC"
 }

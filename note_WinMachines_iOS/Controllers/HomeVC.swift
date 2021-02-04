@@ -49,6 +49,23 @@ extension HomeVC : UITableViewDelegate , UITableViewDataSource{
             getNotes()
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(identifier: Constants.NoteVC) as? NoteVC{ 
+            vc.selectedNote = arrNotes[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "Info") { (act, view, bol) in
+            if let vc = self.storyboard?.instantiateViewController(identifier: Constants.AboutNoteVC) as? AboutNoteVC{
+                vc.selectedNote = self.arrNotes[indexPath.row]
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        
+        let swipe  =  UISwipeActionsConfiguration(actions: [action])
+        return swipe
+    }
 //extension HomeVC : UICollectionViewDelegate , UICollectionViewDataSource{
 //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        arrNotes.count

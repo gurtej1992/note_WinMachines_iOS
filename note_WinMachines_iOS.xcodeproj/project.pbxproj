@@ -83,7 +83,6 @@
 				B781CB1225C2E9C600ACD4D0 /* LaunchScreen.storyboard */,
 				B781CB1525C2E9C600ACD4D0 /* Info.plist */,
 				B7D94AF825CB131300EBF4E0 /* AccessCoreData.swift */,
-				4A75244D25C78BB400F7BBF1 /* AboutNoteVC.swift */,
 				C3EB4A4B25C9B2A100FB6CBE /* Constants.swift */,
 				B7D94AF425CAE08800EBF4E0 /* Functions.swift */,
 			);
@@ -93,6 +92,7 @@
 		B781CB1D25C2EA0600ACD4D0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A75244D25C78BB400F7BBF1 /* AboutNoteVC.swift */,
 				B781CB2C25C2EDF400ACD4D0 /* HomeVC.swift */,
 				B781CB2F25C2EE3B00ACD4D0 /* NoteVC.swift */,
 			);
