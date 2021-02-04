@@ -32,6 +32,12 @@ class NoteVC: UIViewController {
     var userLocation : CLLocationCoordinate2D?
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
+        updatingUI()
+        settingValues()
+    }
+    func settingValues(){
         if let note = selectedNote {
             print(note)
             txtTitle.text = note.note_title
@@ -54,19 +60,16 @@ class NoteVC: UIViewController {
         else{
             buttonSave.setTitle("Save", for: .normal)
         }
+    }
+    func updatingUI(){
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-//        imageView.layer.shadowColor =  UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1.0).cgColor
-//        imageView.layer.shadowOffset = CGSize(width: 0.75, height: 0.75)
-//        imageView.layer.shadowRadius = 1.5
-//        imageView.layer.shadowOpacity = 0.7
-//        imageView.layer.cornerRadius = 2
-//        imageView.clipsToBounds = true
-//        //noteView.addShadow()
-//        imageView.layer.masksToBounds = false
-//        noteView.setCardView()
-        // Do any additional setup after loading the view.
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0.0, y: txtTitle.frame.height , width: txtTitle.frame.width, height: 3.0)
+        bottomLine.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        txtTitle.borderStyle = UITextField.BorderStyle.none
+        txtTitle.layer.addSublayer(bottomLine)
     }
     @IBAction func handleSubject(_ sender: Any) {
         if let vc = storyboard?.instantiateViewController(identifier: Constants.ManageSubjectVC) as? ManageSubjectVC{
@@ -240,9 +243,18 @@ extension NoteVC : CLLocationManagerDelegate{
         print(locations[0])
     }
 }
+
 extension NoteVC : SubjectSelectionDelegate{
-    func subjectSelected(is subject: Subjects) {
-        selectedSubject = subject
+    func subjectSelected(is subject: Subjects?) {
+        if let sub = subject{
+            selectedSubject = subject
+            buttonSubject.setTitle(sub.subjectName, for: [])
+        }
+        else{
+            selectedSubject = nil
+            buttonSubject.setTitle("Select Subject", for: [])
+        }
+        
     }
 }
 extension NoteVC : AVAudioRecorderDelegate{

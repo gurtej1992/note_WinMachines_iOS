@@ -7,12 +7,12 @@
 
 import UIKit
 protocol SubjectSelectionDelegate {
-    func subjectSelected(is subject : Subjects)
+    func subjectSelected(is subject : Subjects?)
 }
 class ManageSubjectVC: UIViewController {
     var arrSubjects = [Subjects]()
     var delegate : SubjectSelectionDelegate?
-    @IBOutlet weak var subjectCV: UICollectionView!
+    @IBOutlet weak var subjectTV: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchSubjets()
@@ -21,7 +21,7 @@ class ManageSubjectVC: UIViewController {
         if let subjects = AccessCoreData.fetchSubjects(){
             arrSubjects.removeAll()
             arrSubjects = subjects
-            subjectCV.reloadData()
+            subjectTV.reloadData()
         }
     }
     @IBAction func handleBack(_ sender: Any) {
@@ -46,18 +46,44 @@ class ManageSubjectVC: UIViewController {
         })
     }
     
+   @objc func longPressed(sender: UILongPressGestureRecognizer)
+    {
+        if sender.state == .began {
+
+            let touchPoint = sender.location(in: self.subjectTV)
+            if let indexPath = subjectTV.indexPathForRow(at: touchPoint) {
+                updateSubject(selectedSubject: arrSubjects[indexPath.row])
+            }
+    }
+    }
+    
 }
-extension ManageSubjectVC : UICollectionViewDelegate, UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension ManageSubjectVC : UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrSubjects.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubjectCVC", for: indexPath) as! SubjectCVC
-        cell.lblSubectName.text = arrSubjects[indexPath.row].subjectName
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action:#selector(longPressed(sender:)))
+            
+        let cell  = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = arrSubjects[indexPath.row].subjectName
+        cell.addGestureRecognizer(longPressRecognizer)
+        let count = AccessCoreData.fetchNotesWithSubject(subject: arrSubjects[indexPath.row])?.count ?? 0
+        cell.detailTextLabel?.text = "Total Notes \(count)"
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.subjectSelected(is: arrSubjects[indexPath.row])
+        self.navigationController?.popViewController(animated: true)
     }
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            delegate?.subjectSelected(is: nil)
+            AccessCoreData.deleteSubject(subjectSubject: arrSubjects[indexPath.row])
+            fetchSubjets()
+        }
+    }
+    
+    
 }

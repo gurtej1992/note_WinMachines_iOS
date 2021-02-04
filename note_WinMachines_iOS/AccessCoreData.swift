@@ -22,7 +22,8 @@ class AccessCoreData: NSObject {
         }
         return notes
     }
-    static func fetchNotesWithPredicate(predicate: NSPredicate) -> [Notes]?{
+    static func fetchNotesWithSubject(subject: Subjects) -> [Notes]?{
+        let predicate =  NSPredicate(format: "subject.subjectName = %@", subject.subjectName!)
          var notes : [Notes]?
         let fetch : NSFetchRequest<Notes> = Notes.fetchRequest()
         fetch.predicate = predicate
@@ -60,6 +61,10 @@ class AccessCoreData: NSObject {
         AccessCoreData.saveCoreData()
     }
     static func deleteSubject(subjectSubject : Subjects){
+        let arrNote = AccessCoreData.fetchNotesWithSubject(subject: subjectSubject)!
+        for note in arrNote{
+            AccessCoreData.deleteNote(note: note)
+        }
         AccessCoreData.context.delete(subjectSubject)
         saveCoreData()
         
