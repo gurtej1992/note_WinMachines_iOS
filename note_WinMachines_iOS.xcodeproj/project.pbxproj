@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A75244E25C78BB400F7BBF1 /* AboutNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75244D25C78BB400F7BBF1 /* AboutNoteVC.swift */; };
 		4AC1379825CC48320057DE3A /* AboutNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1379725CC48320057DE3A /* AboutNoteVC.swift */; };
 		B77085E825CC13EA00D744DD /* ManageSubjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77085E725CC13EA00D744DD /* ManageSubjectVC.swift */; };
 		B77085EB25CC15DA00D744DD /* SubjectCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77085EA25CC15DA00D744DD /* SubjectCVC.swift */; };
@@ -30,7 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A75244D25C78BB400F7BBF1 /* AboutNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNoteVC.swift; sourceTree = "<group>"; };
 		4AC1379725CC48320057DE3A /* AboutNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNoteVC.swift; sourceTree = "<group>"; };
 		B77085E725CC13EA00D744DD /* ManageSubjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageSubjectVC.swift; sourceTree = "<group>"; };
 		B77085EA25CC15DA00D744DD /* SubjectCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCVC.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				B7D94AF825CB131300EBF4E0 /* AccessCoreData.swift */,
 				C3EB4A4B25C9B2A100FB6CBE /* Constants.swift */,
 				B7D94AF425CAE08800EBF4E0 /* Functions.swift */,
-				4AC1379725CC48320057DE3A /* AboutNoteVC.swift */,
 			);
 			path = note_WinMachines_iOS;
 			sourceTree = "<group>";
@@ -101,10 +98,10 @@
 		B781CB1D25C2EA0600ACD4D0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4A75244D25C78BB400F7BBF1 /* AboutNoteVC.swift */,
 				B781CB2C25C2EDF400ACD4D0 /* HomeVC.swift */,
 				B781CB2F25C2EE3B00ACD4D0 /* NoteVC.swift */,
 				B77085E725CC13EA00D744DD /* ManageSubjectVC.swift */,
+				4AC1379725CC48320057DE3A /* AboutNoteVC.swift */,
 				B77085EA25CC15DA00D744DD /* SubjectCVC.swift */,
 			);
 			path = Controllers;
@@ -212,7 +209,6 @@
 				B7D94AF925CB131300EBF4E0 /* AccessCoreData.swift in Sources */,
 				C3EB4A4825C9B11E00FB6CBE /* HomeCollectionViewCell.swift in Sources */,
 				B781CB0525C2E9BD00ACD4D0 /* AppDelegate.swift in Sources */,
-				4A75244E25C78BB400F7BBF1 /* AboutNoteVC.swift in Sources */,
 				B781CB2D25C2EDF400ACD4D0 /* HomeVC.swift in Sources */,
 				4AC1379825CC48320057DE3A /* AboutNoteVC.swift in Sources */,
 				B7D94AF525CAE08800EBF4E0 /* Functions.swift in Sources */,

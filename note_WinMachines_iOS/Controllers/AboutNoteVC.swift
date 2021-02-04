@@ -1,8 +1,8 @@
 //
-//  MoreinfoVCTableView.swift
+//  AboutNoteVC.swift
 //  note_WinMachines_iOS
 //
-//  Created by user185555 on 1/31/21.
+//  Created by user185555 on 2/4/21.
 //
 
 import UIKit
@@ -14,7 +14,16 @@ class AboutNoteVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        print(selectedNote)
+        if let note =  selectedNote{
+            let coordinates = CLLocationCoordinate2D(latitude: note.lat , longitude: note.long)
+            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            let region = MKCoordinateRegion(center: coordinates, span: span)
+            mapView.region = region
+            let pin = MKPointAnnotation()
+            pin.coordinate = coordinates
+            mapView.addAnnotation(pin)
+        }
     }
     @IBAction func handleBack(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -28,4 +37,3 @@ class AboutNoteVC: UITableViewController {
         return 1
     }
 }
-
