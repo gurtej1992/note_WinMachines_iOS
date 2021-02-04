@@ -47,5 +47,10 @@ class AccessCoreData: NSObject {
         subject.subjectName = subjectName
         AccessCoreData.saveCoreData()
     }
+    static func deleteSubject(subjectSubject : Subjects){
+        AccessCoreData.context.delete(subjectSubject)
+        saveCoreData()
+        
+    }
 
 }

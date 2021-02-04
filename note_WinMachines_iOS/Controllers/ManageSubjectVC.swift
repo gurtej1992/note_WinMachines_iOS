@@ -6,10 +6,12 @@
 //
 
 import UIKit
-
+protocol SubjectSelectionDelegate {
+    func subjectSelected(is subject : Subjects)
+}
 class ManageSubjectVC: UIViewController {
     var arrSubjects = [Subjects]()
-
+    var delegate : SubjectSelectionDelegate?
     @IBOutlet weak var subjectCV: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,16 @@ class ManageSubjectVC: UIViewController {
         })
     }
     
+    func updateSubject(selectedSubject : Subjects){
+        showInputDialog(title: "Update Subject", actionTitle: "Update", inputPlaceholder: "Subject Name", text: selectedSubject.subjectName, inputKeyboardType: .default, actionHandler:  { (string) in
+            if let subject = string{
+                selectedSubject.subjectName = subject
+                AccessCoreData.saveCoreData()
+                self.fetchSubjets()
+            }
+        })
+    }
+    
 }
 extension ManageSubjectVC : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,13 +58,6 @@ extension ManageSubjectVC : UICollectionViewDelegate, UICollectionViewDataSource
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedSubject = arrSubjects[indexPath.row]
-        showInputDialog(title: "Update Subject", inputPlaceholder: "Subject Name", text: selectedSubject.subjectName, inputKeyboardType: .default, actionHandler:  { (string) in
-            if let subject = string{
-                selectedSubject.subjectName = subject
-                AccessCoreData.saveCoreData()
-                self.fetchSubjets()
-            }
-        })
+        delegate?.subjectSelected(is: arrSubjects[indexPath.row])
     }
 }

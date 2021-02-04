@@ -305,11 +305,13 @@
                     <connections>
                         <outlet property="btnRemoveRecording" destination="S0D-Yo-jOg" id="vLI-7r-aim"/>
                         <outlet property="buttonSave" destination="Yh0-xc-xPZ" id="xWo-eF-J8s"/>
+                        <outlet property="buttonSubject" destination="egs-NV-doh" id="vua-lB-hVA"/>
                         <outlet property="imageView" destination="iRL-k2-3SI" id="wO8-Cr-ClZ"/>
                         <outlet property="noteImg" destination="uTA-pI-cGc" id="n4P-UJ-dYH"/>
                         <outlet property="noteView" destination="yEn-9e-mZS" id="Bwv-en-0Bh"/>
                         <outlet property="playerButtonImg" destination="TXw-dQ-dUg" id="g4b-O2-2ax"/>
                         <outlet property="playerView" destination="rrF-sa-JtN" id="JPj-oX-MMG"/>
+                        <outlet property="recordImg" destination="3mM-mX-pGi" id="dKP-cv-6hc"/>
                         <outlet property="txtContent" destination="cu6-FP-Kko" id="2JR-4u-P2J"/>
                         <outlet property="txtTitle" destination="cmm-rm-Zcx" id="Wpy-Tr-ikd"/>
                     </connections>
