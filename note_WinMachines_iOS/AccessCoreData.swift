@@ -42,5 +42,10 @@ class AccessCoreData: NSObject {
             
         }
     }
+    static func addSubject(subjectName: String){
+        let subject = Subjects(context: AccessCoreData.context)
+        subject.subjectName = subjectName
+        AccessCoreData.saveCoreData()
+    }
 
 }

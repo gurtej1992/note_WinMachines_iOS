@@ -46,6 +46,12 @@ class NoteVC: UIViewController {
 //        noteView.setCardView()
         // Do any additional setup after loading the view.
     }
+    @IBAction func handleSubject(_ sender: Any) {
+        if let vc = storyboard?.instantiateViewController(identifier: Constants.ManageSubjectVC){
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
     @IBAction func handlePlayerButton(_ sender: UIButton) {
     }
     @IBAction func handleRemoveRecording(_ sender: UIButton) {

@@ -10,6 +10,9 @@ import UIKit
 class Constants: NSObject {
     static let HomeCollectionViewCell = "HomeCollectionViewCell"
     static let HomeTableViewCell = "cell"
+    static let SubjectCVC = "SubjectCVC"
     static let NoteVC = "NoteVC"
     static let AboutNoteVC = "AboutNoteVC"
+    static let selectSubject = "selectSubject"
+    static let ManageSubjectVC = "ManageSubjectVC"
 }
