@@ -214,7 +214,7 @@ class NoteVC: UIViewController {
 extension NoteVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.isHidden = false
-        selectedImage = info[.imageURL] as? String
+        
         if let image = info[.editedImage] as? UIImage {
             noteImg.image = image
             
@@ -224,6 +224,18 @@ extension NoteVC : UIImagePickerControllerDelegate, UINavigationControllerDelega
         } else {
             print("Other source")
         }
+        let fileManager = FileManager.default
+         let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+        let name =  UUID().uuidString
+         let imagePath = documentsPath?.appendingPathComponent("\(name).jpg")
+        selectedImage = imagePath?.absoluteString
+         
+         // extract image from the picker and save it
+         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+             
+             let imageData = pickedImage.jpegData(compressionQuality: 0.75)
+             try! imageData?.write(to: imagePath!)
+         }
         
         picker.dismiss(animated: true, completion: nil)
     }
